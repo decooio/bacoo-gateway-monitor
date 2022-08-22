@@ -20,16 +20,20 @@ export async function unpinLocalFiles() {
 
 async function getLocalIpfsFiles() {
   const url = `${configs.ipfs.gateWayUrl}/api/v0/pin/ls?type=recursive`;
-  const config = {
+  const config = getConfig();
+  const res = await axios.post(url, null, config);
+  const providerList = res.data;
+  return providerList
+}
+
+function getConfig() {
+  return {
     auth: {
       username: configs.ipfs.IPFS_AUTH_USERNAME,
       password: configs.ipfs.IPFS_AUTH_PASSWORD,
     },
     timeout: configs.ipfs.IPFS_HTTP_TIMEOUT,
   };
-  const res = await axios.post(url, null, config);
-  const providerList = res.data;
-  return providerList
 }
 
 async function rm(cid: string) {
