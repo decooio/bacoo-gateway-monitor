@@ -19,7 +19,7 @@ export async function unpinLocalFiles() {
 }
 
 async function getLocalIpfsFiles() {
-  const url = `${configs.ipfs.gateWayUrl}/api/v0/pin/ls`;
+  const url = `${configs.ipfs.gateWayUrl}/api/v0/pin/ls?type=recursive`;
   const config = {
     auth: {
       username: configs.ipfs.IPFS_AUTH_USERNAME,
