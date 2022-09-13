@@ -1,16 +1,16 @@
 {
-  "name": "ipfs-w3auth-pinning-service",
-  "version": "0.4.0",
+  "name": "bacoo-gateway-monitor",
+  "version": "0.0.1",
   "main": "src/index.ts",
   "repository": "https://github.com/crustio/ipfs-w3auth-pinning-service.git",
-  "author": "Zikun Fan <kun@crust.network>",
+  "author": "zibo <zibo@decoo.io>",
   "contributors": [
     "zibo <zibo@decoo.io>"
   ],
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development nodemon ./src/app.ts",
-    "build": "tsc && cp -R src/migrations dist",
+    "build": "tsc",
     "start": "node ./dist/app.js",
     "lint": "gts lint",
     "clean": "gts clean",
@@ -26,7 +26,6 @@
     "bluebird": "^3.7.2",
     "dingtalk-robot-sender": "^1.2.0",
     "dotenv": "^10.0.0",
-    "ipfs-http-client": "^54.0.2",
     "lodash": "^4.17.21",
     "node-schedule": "^2.0.0",
     "winston": "^3.3.3"
